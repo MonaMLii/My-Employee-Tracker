@@ -82,7 +82,7 @@ const addDepartment = () => {
             db.query('INSERT INTO departments SET ?', department, err => {
                 if (err) { console.log(err) }
             })
-            console.log('Department Succesfully Added!')
+            console.log('Department Succesfully Added!');
             addItem();
         })
 };
@@ -112,7 +112,7 @@ const addRole = () => {
             db.query('INSERT INTO roles SET ?', role, err => {
                 if (err) { console.log(err) }
             })
-            console.log('Role Succesfully Added!')
+            console.log('Role Succesfully Added!');
             addItem();
         })
 };
@@ -168,7 +168,7 @@ const addEmployee = () => {
                     db.query('INSERT INTO roles SET ?', newEmployee, err => {
                         if (err) { console.log(err) }
                     })
-                    console.log('Employee Succesfully Added!')
+                    console.log('Employee Succesfully Added!');
                     addItem();
                 })
             }
@@ -198,7 +198,7 @@ const updateRole = () => {
             db.query(`UPDATE employees SET ? WHERE id = ${employee.id}`, newRole, err => {
                 if (err) { console.log(err) }
             })
-            console.log('Department Succesfully Updated!')
+            console.log('Department Succesfully Updated!');
             addItem();
         })
 };
@@ -206,7 +206,7 @@ const updateRole = () => {
 const viewDepartments = () => {
     db.query('SELECT * FROM departments', (err, departments ) => {
         if (err) {
-            console.log(err)
+            console.log(err);
         }
         console.table(departments);
     })
@@ -216,7 +216,7 @@ const viewDepartments = () => {
 const viewRoles = () => {
     db.query('SELECT * FROM roles', (err, roles ) => {
         if (err) {
-            console.log(err)
+            console.log(err);
         }
         console.table(roles);
     })
@@ -227,7 +227,7 @@ const viewRoles = () => {
 const viewEmployees = () => {
     db.query('SELECT * FROM employees', (err, employees ) => {
         if (err) {
-            console.log(err)
+            console.log(err);
         }
         console.table(employees);
     })
@@ -248,7 +248,7 @@ const deleteDepartment = () => {
             db.query(`DELETE departments SET ? WHERE id = ${department.name}`, department, err => {
                 if (err) { console.log(err) }
             })
-            console.log('Department Succesfully Deleted!')
+            console.log('Department Succesfully Deleted!');
             addItem();
         })
 };
@@ -266,7 +266,7 @@ const deleteRole = () => {
             db.query(`DELETE roles SET ? WHERE id = ${role.title}`, role, err => {
                 if (err) { console.log(err) }
             })
-            console.log('Role Succesfully Deleted!')
+            console.log('Role Succesfully Deleted!');
             addItem();
         })
 };
@@ -287,10 +287,10 @@ const deleteEmployee = () => {
         ])
         .then((employee) => {
 
-            db.query(`DELETE employees SET ? WHERE id = ${employee.first_name, employee.last_name}`, employee, err => {
+            db.query(`DELETE employees SET ? WHERE first_name = ${employee.first_name} AND last_name = ${employee.last_name}`, employee, err => {
                 if (err) { console.log(err) }
             })
-            console.log('Employee Succesfully Deleted!')
+            console.log('Employee Succesfully Deleted!');
             addItem();
         })
 };
