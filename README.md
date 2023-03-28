@@ -45,3 +45,7 @@ npm i
 Unlicensed
 
 ## Example
+<img width="349" alt="Screenshot 2023-03-28 at 12 24 23 AM" src="https://user-images.githubusercontent.com/89316044/228160879-cefebd7c-3b06-403c-8c4a-0301e225cd20.png">
+
+
+[Untitled_ Mar 28, 2023 12_18 AM.webm](https://user-images.githubusercontent.com/89316044/228159563-9b5f12c2-103e-44e6-8f20-cb8e845614c5.webm)
