@@ -153,7 +153,8 @@ const addEmployee = () => {
                 console.log('Employee Succesfully Added!')
                 addItem();
             } else if (employee.managerBoolean === 'No') {
-                inquirer.promt([{
+                inquirer
+                    .prompt([{
                     type: 'input',
                     name: 'manager_id',
                     message:'What is the id of the manager of the employee?'
@@ -219,6 +220,7 @@ const viewRoles = () => {
             console.log(err);
         }
         console.table(roles);
+        
     })
     addItem();
 };
