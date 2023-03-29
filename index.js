@@ -133,22 +133,25 @@ const addEmployee = () => {
                 message: 'What is employee last name?',
             },
             {
-                type: 'input',
+                type: 'number',
                 name: 'role_id',
                 message: 'What is the role id of this employee?'
             },
             {
                 type: 'list',
                 name: 'managerBoolean',
-                message: 'IS the employee a manager?',
+                message: 'Is the employee a manager?',
                 choices: ['Yes', 'No']
             }
         ])
         .then((employee) => {
+            console.log(employee);
             if (employee.managerBoolean === 'Yes') {
                 delete employee.managerBoolean
-                db.query('INSERT INTO roles SET ?', employee, err => {
+            
+                db.query('INSERT INTO employees SET ?', employee, err => {
                     if (err) { console.log(err) }
+                    console.log(employee, "this is employee")
                 })
                 console.log('Employee Succesfully Added!')
                 addItem();
@@ -164,9 +167,9 @@ const addEmployee = () => {
 
                     let newEmployee = {
                        ...employee,
-                       ...subordinate
+                       ...subordinate,
                     }
-                    db.query('INSERT INTO roles SET ?', newEmployee, err => {
+                    db.query('INSERT INTO employees SET ?', newEmployee, err => {
                         if (err) { console.log(err) }
                     })
                     console.log('Employee Succesfully Added!');
